@@ -1,8 +1,8 @@
 module paraleloserial(CLOCK, LOADS, IS, D, OS);
 	input CLOCK, LOADS, IS;
-	input [9:0];
+	input [9:0] D;
 	output OS;
-	reg temp [9:0];
+	reg [9:0] temp;
 	always @(posedge CLOCK)
 	begin 
 		if (LOADS) 
@@ -21,7 +21,7 @@ module serialparalelo(CLOCK, IS, OP);
 	input CLOCK, IS;
 	output [9:0] OP;
 	reg [9:0] temp;
-	always @(posedge)
+	always @(posedge CLOCK)
 	begin
 		temp = { IS , temp[9:1] };
 	end
