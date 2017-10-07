@@ -1,0 +1,28 @@
+Fecha: 16 de setiembre de 2019
+Presentes:
+	-Laura Rincon
+	-Emanual Fernandez
+	-Sofía Fonseca
+
+Motivo de reunión:
+Planeamiento inicial del proyecto
+
+Hora de inicio: 2:00 p.m.
+Hora de conclusión: 8:00 p.m.
+
+--------------------------------------------------------
+
+Se leen las especificaciones del proyecto.
+Cada uno investiga un tema en particular entre PHY, PCIe y USB.
+Se investiga y comprende más a fondo los conceptos para aprender.
+Se encuentran las diferencias entre el USB y PCIe.
+Se crea un github para mantener el código y las bitácoras del proyecto.
+Se llega un acuerdo de tener una reunión por semana en la que se hable de los avances que se han hecho.
+Cada uno de los participantes va a trabajar en un bloque por separado.
+Se va a crear un documento en el que se hace una estandarización de señales en el código, para que a la hora de unir los trabajos facilite la unión.
+
+Se encontro un documento en el que se presentan los bloques funcionales del usb y del pcie para compararlos. 
+Se hace la division de las tareas de la siguiente manera segun los siguientes bloques:
+MAC
+
+Se hizo un tutorial de git
