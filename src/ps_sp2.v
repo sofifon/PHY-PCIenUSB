@@ -52,9 +52,11 @@ module serialparalelo(CLOCK, IS, OP);
 	input CLOCK, IS;
 	output reg [9:0] OP;
 	reg [9:0] temp;
+	always @(negedge CLOCK) begin
+		temp = { IS , temp[9:1] };
+	end
 	always @(posedge CLOCK)
 	begin
-		temp = { IS , temp[9:1] };
 		OP = temp;
 	end
 endmodule
