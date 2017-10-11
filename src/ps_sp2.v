@@ -50,11 +50,12 @@ endmodule
 		
 module serialparalelo(CLOCK, IS, OP);
 	input CLOCK, IS;
-	output [9:0] OP;
+	output OP;
+	reg [9:0] OP;
 	reg [9:0] temp;
 	always @(posedge CLOCK)
 	begin
 		temp = { IS , temp[9:1] };
+		OP = temp;
 	end
-	assign OP = temp;
 endmodule
