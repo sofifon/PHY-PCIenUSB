@@ -8,6 +8,6 @@ module testbench();
 	generadorsenales pruebaps(CLOCK, D);
 	paraleloserial convertidorps(CLOCK, D, OS);
 	serialparalelo convertidorsp(CLOCK, OS, OP);
-	paraleloserialsynt convertidorpssint(CLOCK, D, OSsint);
-	serialparalelosynt convertidorspsint(CLOCK, OSsint, OPsint);
+	paraleloserialsynt convertidorpssynt(CLOCK, D, OSsint);
+	serialparalelosynt convertidorspsynt(CLOCK, OSsint, OPsint);
 endmodule
