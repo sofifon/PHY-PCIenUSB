@@ -12,10 +12,10 @@ module convertidor (PCLK,MODO,in,out_8);
 				bits=2'b01;
 			end
 			else if(MODO==1||PCLK==2'b10)begin //8 bits
-				bits=2'b00;
+				bits=2'b10;
 			end
 			else 
-				out_8[7:0]=0;
+				bits=2'b00;;
  			end
 		end
 		//Como escoger el clk
