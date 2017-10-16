@@ -1,7 +1,6 @@
-module convertidor(PCLK,MODO,in,out_8, ENB, CLK);
+module convertidor (PCLK,MODO,in,out_8, ENB);
 		input wire [1:0] PCLK;
 		input wire MODO;
-		input wire CLK;
 		input wire ENB;
 		input wire [31:0] in;
 		output reg [7:0] out_8;
@@ -19,8 +18,8 @@ module convertidor(PCLK,MODO,in,out_8, ENB, CLK);
 				end
 			end
 		end
-
-		always @(posedge CLK) begin
+		//Como escoger el clk
+		always @(posedge clk) begin
 			if(bits==2'b11)begin
 				out_8[7:0]<=in[31:24];
 				bits<=2'b10;

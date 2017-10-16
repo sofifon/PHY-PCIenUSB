@@ -9,14 +9,17 @@
 make:
 	iverilog -o prob probador_tb.v
 	iverilog -o pssp testbenchps.v
+	iverilog -o conv probador_conv_tb.v
 
 run: 
 	vvp prob
 	vvp pssp
+	vvp conv
 	
 look:
-	gtkwave encoding.vcd
+	gtkwave encoding_decoding.vcd
 	gtkwave paraleloserial.vcd
+	gtkwave conv328.vcd
 
 clean: 
 	rm -f -R *.o *.vcd prob pssp
