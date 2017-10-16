@@ -1,4 +1,4 @@
-`include "probador.v"
+`include "probador_tx.v"
 `include "encoder.v"
 `include "ps.v"
 `include "sp.v"
