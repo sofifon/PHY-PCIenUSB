@@ -22,4 +22,4 @@ look:
 	gtkwave conv328.vcd
 
 clean: 
-	rm -f -R *.o *.vcd prob pssp
+	rm -f -R *.o *.vcd prob pssp conv
