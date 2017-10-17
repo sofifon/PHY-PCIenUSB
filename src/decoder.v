@@ -1,3 +1,4 @@
+`timescale 1 ns/ 1 ps
 module decoder(in_10b, out_8b);
 
 input wire [9:0] in_10b;
