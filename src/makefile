@@ -7,7 +7,7 @@
 ###########Comandos generales################################
 	
 make:
-	iverilog -o prob probador_tb.v
+#	iverilog -o prob probador_tb.v
 	iverilog -o pssp testbenchps.v
 	iverilog -o conv probador_conv_tb.v
 

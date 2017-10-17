@@ -10,8 +10,8 @@ input wire K;
 output wire [9:0] out_10b, out_10b_synt;
 
 Probador p(in_8b, K);
-enconder enc(in_8b, K, out_10b);
-encondersynt synt(in_8b, K, out_10b_synt);
+encoder enc(in_8b, K, out_10b);
+encodersynt synt(in_8b, K, out_10b_synt);
 
 decoder dec(out_10b, out_8b);
 decodersynt decsynt(out_10b,out_8b_synt);
