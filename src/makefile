@@ -17,8 +17,8 @@ run:
 	vvp conv
 	
 look:
-	gtkwave encoding_decoding.vcd
-	gtkwave paraleloserial.vcd
+#	gtkwave encoding_decoding.vcd
+#	gtkwave paraleloserial.vcd
 	gtkwave conv328.vcd
 
 clean: 
