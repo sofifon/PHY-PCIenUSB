@@ -1,20 +1,22 @@
-`include "probador_tx.v"
-`include "encoder.v"
-`include "ps.v"
-`include "sp.v"
-`include "decoder.v"
+`include "Transmitter.v"
+`include "probador_conv.v"
+//`include "TransmitterSYNT.v"
+`include "Receiver.v"
+`include "PLL.v"
 
 module tb_tx();
 
-wire [7:0] in_8b, out_dec;
-wire CLK, ENB, reset, K, out_serial;
-wire [9:0] enc_out_10b, out_paralelo ;
+wire [1:0] PCLK;
+wire [31:0] IN_DATA, OUT_CONV;
+wire CLK, ENB_CONV, RESET_SP, RESET_PS, RESET_PLL, K, OUT_SERIAL, OUT_SERIALsynt, RESET_CONV832;
 
-Probador p(in_8b, K, CLK, reset);
-encoder enc(in_8b, K, enc_out_10b, reset, ENB);
-paraleloserial ps(CLK, ENB, enc_out_10b, out_serial);
 
-serialparalelo sp(CLK, ENB, out_serial, out_paralelo);
-decoder dec(out_paralelo, out_dec);
+
+probador_conv p(CLK, PCLK, IN_DATA, K, RESET_PS, RESET_PLL, ENB_CONV, RESET_SP, RESET_CONV832);
+Transmitter tx(CLK, PCLK, IN_DATA ,  K, RESET_PS, RESET_PLL, ENB_CONV, OUT_SERIAL);
+//Transmittersynt synt(CLK, PCLK, IN_DATA ,  K, RESET_SP, RESET_PLL, ENB_CONV, OUT_SERIALsynt);
+
+Receiver rx(CLK,  RESET_PLL, OUT_SERIAL, RESET_SP, PCLK, RESET_CONV832 , OUT_CONV);
+
 
 endmodule

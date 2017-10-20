@@ -12,18 +12,18 @@ always @(posedge CLK)
 	begin
 	if(reset)
 		begin
-		if(cont==0)
+		if(cont== 4'b0000)
 			begin
-			cont <= reset;
+			cont <= 4'b0001;
 			CLK_10 <= reset;
 			end
-		else if(cont <5)
+		else if(cont < 4'b0101)
 			begin
-			cont ++;		
+			cont = cont + 4'b0001;		
 			end
-		else if(cont==5)
+		else if(cont== 4'b0101)
 			begin
-			cont <= 1;
+			cont <= 4'b0001;
 			CLK_10 <= ~CLK_10;
 			end
 		
@@ -32,7 +32,7 @@ always @(posedge CLK)
 	
 	else
 		begin
-		cont = reset;
+		cont <= 4'b0000;
 		end
 	end
 assign CLK_5 = (reset? CLK: 0);

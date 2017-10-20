@@ -1,33 +1,49 @@
-module probador_conv(PCLK,ENB,in,CLK);
+module probador_conv(CLK, PCLK, in, K, RESET_PS, RESET_PLL, ENB, RESET_SP, RESET_CONV832);
 
 	output reg [1:0] PCLK;
-	output reg CLK;
-	output reg ENB;
+	output reg CLK, K, RESET_PLL, RESET_SP, RESET_PS , ENB, RESET_CONV832;
   	output reg [31:0] in;
 	
 	initial begin
-		CLK=0;
-		ENB=0;
+		$dumpfile ("Tx.vcd");
+		$dumpvars;
+		CLK<=0;
+		ENB<=0;
+		K<=0;
+		RESET_PLL<=0;
+		RESET_PS<=0;
+		RESET_SP<=0;
+		RESET_CONV832<=0;
 		
-		#20 ENB=1;
-		#80
+		#10 
+		RESET_PLL<=1;
+		#10
+		ENB<=1;
+		
+		#180
 		PCLK<=2'b00;//32bits
         	in<=32'b00001111000000001111111101010101;
-		#75
-		PCLK<=2'b01;//16bits
-		
+		#10
+		RESET_PS<=1;
 		#5
-        	in<=32'b0011000011101010;
-		
-		#80
-		PCLK<=2'b10;//8bits
-        	in<=32'b10101110;
+		RESET_SP<=1;
+		#95
+		RESET_CONV832<=1;
+		#290
+        	in<=32'b10101010000011110000000011111111;
+		#400
+        	in<=32'b00001111111100001111111100000000;
+		#400
 	
-		#150
+			in<=32'b00110000111010100011000011101010;
+		#400
+        	in<=32'b10101010111111110000000010101010;
+	
+		#800
 	  	$finish;
 	end
 	always begin
-        	#10 CLK <= ~CLK;
+        	#5 CLK <= ~CLK;
       	end
 	
 endmodule

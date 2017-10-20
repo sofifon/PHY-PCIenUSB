@@ -1,10 +1,11 @@
-module convertidor(PCLK,in,out_8,ENB,CLK,bits);
+module convertidor(PCLK,in,out_8,ENB,CLK);
 		input wire [1:0] PCLK;
 		input wire CLK;
 		input wire ENB;
 		input wire [31:0] in;
 		output reg [7:0] out_8;
-		output reg [1:0] bits;
+		reg [1:0] bits;
+		
 		always @(*)
 		begin
 		case(PCLK[1:0])
@@ -30,11 +31,13 @@ module convertidor(PCLK,in,out_8,ENB,CLK,bits);
 				end
 				else //(bits==2'b00)
 				begin
+					bits <=2'b11;
 					out_8[7:0]<=in[7:0];
 				end 
 			end
 			else 
 			begin
+				bits <=2'b11;
 				out_8=0;
 			end	
 		end

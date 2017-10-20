@@ -7,22 +7,13 @@
 ###########Comandos generales################################
 	
 make:
-#	iverilog -o prob probador_tb.v
-	iverilog -o pssp testbenchps.v
-	iverilog -o conv probador_conv_tb.v
-	iverilog -o conv832 probador_conv832_tb.v
+	iverilog -o prob tb_tx.v
 
 run: 
-#	vvp prob
-	vvp pssp
-	vvp conv
-	vvp conv832
+	vvp prob
 	
 look:
-#	gtkwave encoding_decoding.vcd
-#	gtkwave paraleloserial.vcd
-	gtkwave conv328.vcd
-	gtkwave conv832.vcd
+	gtkwave Tx.vcd
 
 clean: 
 	rm -f -R *.o *.vcd prob pssp conv conv832

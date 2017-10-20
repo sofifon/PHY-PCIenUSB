@@ -1,4 +1,4 @@
-`include "convertidor832.v"
+`include "convertidor832synt.v"
 `include "probador_conv832.v"
 
 module probador_conv832_tb();
