@@ -1,0 +1,67 @@
+[*]
+[*] GTKWave Analyzer v3.3.83 (w)1999-2017 BSI
+[*] Sat Oct 21 05:33:10 2017
+[*]
+[dumpfile] "C:\iverilog\TX.vcd"
+[savefile] "C:\Users\Laura\Desktop\TxRx.gtkw"
+[timestart] 191800
+[size] 1280 657
+[pos] -61 -50
+*-17.184099 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_tx.
+[treeopen] tb_tx.tx.
+[sst_width] 197
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 173
+@200
+-**TRANSMITTER**
+@28
+tb_tx.CLK
+@200
+-PLL
+@28
+tb_tx.tx.CLK_PS
+tb_tx.tx.CLK_CONV
+@200
+-Convertidor 32/8
+@28
+tb_tx.tx.CLK_CONV
+tb_tx.tx.ENB_CONV
+@22
+[color] 2
+tb_tx.IN_DATA[31:0]
+tb_tx.tx.OUT_CONV[7:0]
+@200
+-Encoder
+@22
+tb_tx.tx.ENC_OUT_10B[9:0]
+@28
+tb_tx.tx.ENC_OUT_10B[9:0]
+@200
+-Paralelo Serial
+@28
+tb_tx.tx.RESET_PS
+tb_tx.tx.OUT_SERIAL
+@200
+-**RECEIVER**
+-Sync
+@28
+tb_tx.rx.OUT_RDM
+@200
+-Serial Paralelo
+@28
+tb_tx.rx.RESET_SP
+@22
+tb_tx.rx.OUT_PARALELO[9:0]
+@200
+-decoder
+@22
+tb_tx.rx.OUT_DEC[7:0]
+@200
+-Convertidor 8/32
+@23
+[color] 2
+tb_tx.rx.OUT_CONV[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
