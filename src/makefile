@@ -13,7 +13,7 @@ run:
 	vvp prob
 	
 look:
-	gtkwave Tx.vcd
+	gtkwave TxRx.vcd
 
 clean: 
 	rm -f -R *.o *.vcd prob pssp conv conv832
