@@ -1,4 +1,4 @@
-module probador_RDM(CLK, IN_DATA);
+module probador_Sync(CLK, IN_DATA);
 
 output reg CLK ,IN_DATA;
 

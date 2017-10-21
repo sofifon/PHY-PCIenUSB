@@ -1,5 +1,5 @@
 `include "sp.v"
-`include "RDM.v"
+`include "Sync.v"
 `include "decoder.v"
 `include "convertidor832.v"
 
@@ -17,7 +17,7 @@ output [31:0] OUT_CONV;
 
 PLL pll_rx(CLK, RESET_PLL, CLK_PS, CLK_CONV);
 
-RDM rdm(CLK_PS, IN_SERIAL, OUT_RDM);
+Sync rdm(CLK_PS, IN_SERIAL, OUT_RDM);
 
 serialparalelo sp(CLK_PS, RESET_SP, OUT_RDM, OUT_PARALELO);
 

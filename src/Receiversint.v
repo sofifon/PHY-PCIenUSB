@@ -46,7 +46,7 @@ module Receiversynt(CLK, RESET_PLL, IN_SERIAL, RESET_SP, RESET_CONV, OUT_CONV);
     .reset(RESET_PLL)
   );
   (* src = "Receiver.v:21" *)
-  RDMs rdm (
+  Syncs rdm (
     .CLK(CLK_PS),
     .IN_Data(IN_SERIAL),
     .OUT_Data(OUT_RDM)
@@ -349,7 +349,7 @@ module PLLs(CLK, reset, CLK_5, CLK_10);
 endmodule
 
 (* src = "RDM.v:1" *)
-module RDMs(CLK, IN_Data, OUT_Data);
+module Syncs(CLK, IN_Data, OUT_Data);
   (* src = "RDM.v:3" *)
   input CLK;
   (* src = "RDM.v:3" *)
